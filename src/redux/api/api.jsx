@@ -1,7 +1,7 @@
 import {createApi} from "@reduxjs/toolkit/query/react";
 import { axios_instance } from "../../axios/instance";
 
-const api = createApi({
+export const api = createApi({
     reducerPath:"api",
     baseQuery: async(args, api, extraOptions)=>{
         // args -> includes the query parameters, request body, and other 
