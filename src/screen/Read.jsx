@@ -1,6 +1,12 @@
+import NavBar from "../components/NavBar";
+import { useGetAllDataQuery } from "../redux/api/api"
+
 function Read(){
+    const { isLoading, isError, data, isSuccess } = useGetAllDataQuery({})
+    console.log(data)
     return <>
-        <h1>Read screen</h1>
+        <NavBar/>
+        <h3>Posts</h3>
     </>
 }
 
