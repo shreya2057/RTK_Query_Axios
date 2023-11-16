@@ -44,3 +44,11 @@
 .link{
   margin-right: 40px;
 }
+
+.cards{
+  color: black;
+  background-color: antiquewhite;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
