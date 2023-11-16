@@ -22,8 +22,6 @@ export const api = createApi({
                 params: query,
                 data: body
             });
-
-            console.log(endpoint);
             return {data: response.data};
         } catch(error){
             console.log(error);
