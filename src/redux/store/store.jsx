@@ -4,7 +4,9 @@ import { api } from "../api/api";
 const store = configureStore({
     reducer:{
         [api.reducerPath]: api.reducer
-    }
+    },
+
+    middleware: (defaultMiddleware)=>defaultMiddleware().concat(api.middleware)
 });
 
 export {store};
