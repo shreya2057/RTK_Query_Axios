@@ -23,13 +23,20 @@ const api = createApi({
                 data: body
             });
 
-            console.log(response.data);
+            console.log(endpoint);
             return {data: response.data};
         } catch(error){
             console.log(error);
             throw error;
         }
-    }
+    },
+    endpoints: (builder)=>({
+        getAllData: builder.query({
+            query: ()=>({
+                endpoint: "/posts"
+            })
+        })
+    })
 });
 
-export {api};
+export const {useGetAllDataQuery} =  api;
