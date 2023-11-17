@@ -44,8 +44,17 @@ export const api = createApi({
             extraOptions:{
                 method: "POST"
             }
+        }),
+        updateData: builder.mutation({
+            query:(id, post)=>({
+                endpoint: `/posts/${id}`,
+                body: post
+            }),
+            extraOptions:{
+                method: "PATCH"
+            }
         })
     })
 });
 
-export const { useGetAllDataQuery, usePostDataMutation } =  api;
+export const { useGetAllDataQuery, usePostDataMutation, useUpdateDataMutation } =  api;
