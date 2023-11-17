@@ -28,17 +28,22 @@ export const api = createApi({
             throw error;
         }
     },
+
+    tagTypes: ["Post"],
+
     endpoints: (builder)=>({
         getAllData: builder.query({
             query: ()=>({
                 endpoint: "/posts"
-            })
+            }),
+            providesTags: ["Posts"]
         }),
         postData: builder.mutation({
             query: (post)=> ({
                 endpoint: "/posts",
                 body: post
             }),
+            invalidatesTags: ["Posts"],
             extraOptions:{
                 method: "POST"
             }
@@ -48,6 +53,7 @@ export const api = createApi({
                 endpoint: `/posts/${post.id}`,
                 body: post.posts
             }),
+            invalidatesTags: ["Posts"],
             extraOptions:{
                 method: "PATCH"
             }
@@ -56,6 +62,7 @@ export const api = createApi({
             query: (id)=>({
                endpoint: `/posts/${id}` 
             }),
+            invalidatesTags: ["Posts"],
             extraOptions:{
                 method: "DELETE",
             }
