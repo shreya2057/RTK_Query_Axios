@@ -15,9 +15,8 @@ function ChangeData(){
         };
         try{
             await update_data({id: id,posts});
-            if(isSuccess){
-                setBody("")
-            }
+            alert("Data updated")
+            setBody("");
         }catch(error){
             console.log(error)
         }
