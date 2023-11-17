@@ -4,8 +4,7 @@ function ChangeData(){
     const location = useLocation();
     const post = location.state;
     return <>
-        <input 
-            placeholder='Enter the body' 
+        <input  
             type='text'
             // onChange={(event)=>setBody(event.target.value)}
             // value={body}
