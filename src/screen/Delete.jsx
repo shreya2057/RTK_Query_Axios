@@ -7,9 +7,7 @@ function Delete(){
     const handle_delete = async(id)=>{
         try{
             await delete_data(id);
-            if(isSuccess){
-                alert("Deleted")
-            }
+            alert("Deleted");
         }catch(error){
             console.log(error);
         }
