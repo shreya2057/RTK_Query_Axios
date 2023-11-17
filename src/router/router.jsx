@@ -7,6 +7,7 @@ import App from "../App";
 import Read from "../screen/Read";
 import Create from "../screen/Create";
 import Update from "../screen/Update";
+import ChangeData from "../screen/ChangeData";
 
 function AppRouter(){
     return <Router>
@@ -15,7 +16,7 @@ function AppRouter(){
             <Route path="read" element={<Read/>}/>
             <Route path="create" element={<Create/>}/>
             <Route path="update" element={<Update/>}/>
-            {/* <Route path="delete" element={<App/>}/> */}
+            <Route path="change" element={<ChangeData/>}/>
         </Routes>
     </Router>
 }
