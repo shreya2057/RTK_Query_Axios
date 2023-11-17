@@ -51,6 +51,14 @@ export const api = createApi({
             extraOptions:{
                 method: "PATCH"
             }
+        }),
+        deleteData: builder.mutation({
+            query: (id)=>({
+               endpoint: `/posts/${id}` 
+            }),
+            extraOptions:{
+                method: "DELETE",
+            }
         })
     })
 });
