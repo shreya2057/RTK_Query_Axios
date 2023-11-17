@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { useGetAllDataQuery } from "../redux/api/api"
 
 function Update(){
-    const { isLoading, isError, data, isSuccess } = useGetAllDataQuery({})
-    
+    const { isLoading, isError, data, isSuccess } = useGetAllDataQuery({});
+    const navigate = useNavigate();
+
     return <>
         <NavBar/>
         <h3>Posts</h3>
@@ -13,9 +15,18 @@ function Update(){
         }
         {
             isSuccess &&
-            data.map((item, index)=><div className="cards" key={index}>
-                <div><b>{item.title}</b></div>
-                <div>{item.body}</div>
+            data.map((item, index)=><div key={index}>
+                <button 
+                    className="cards"
+                    onClick={()=>{
+                        const id = item.id;
+                        console.log(item.id)
+                        navigate("/change", {state:{post_id: id}})
+                    }}
+                >
+                    <div><b>{item.title}</b></div>
+                    <div>{item.body}</div>
+                </button>
             </div>)
         }
         {
