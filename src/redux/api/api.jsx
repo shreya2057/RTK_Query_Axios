@@ -33,8 +33,15 @@ export const api = createApi({
             query: ()=>({
                 endpoint: "/posts"
             })
+        }),
+        postData: builder.mutation({
+            query: (post)=> ({
+                endpoint: "/posts",
+                method: "POST",
+                body: post
+            })
         })
     })
 });
 
-export const {useGetAllDataQuery} =  api;
+export const { useGetAllDataQuery, usePostDataMutation } =  api;
