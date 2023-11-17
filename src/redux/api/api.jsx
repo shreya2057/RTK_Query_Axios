@@ -63,4 +63,9 @@ export const api = createApi({
     })
 });
 
-export const { useGetAllDataQuery, usePostDataMutation, useUpdateDataMutation } =  api;
+export const { 
+    useGetAllDataQuery, 
+    usePostDataMutation, 
+    useUpdateDataMutation,
+    useDeleteDataMutation
+} =  api;
