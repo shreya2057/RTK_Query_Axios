@@ -3,7 +3,6 @@ import { useGetAllDataQuery } from "../redux/api/api"
 
 function Update(){
     const { isLoading, isError, data, isSuccess } = useGetAllDataQuery({})
-    console.log(data)
     
     return <>
         <NavBar/>
