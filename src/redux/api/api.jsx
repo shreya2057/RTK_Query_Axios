@@ -14,14 +14,16 @@ export const api = createApi({
         //                 passed to the baseQuery function.
         //              -> it provides extra information or configurations.
         const { endpoint, query, body } = args;
+        const method = extraOptions?.method || 'get'
         try{
             const response = await axios_instance({
                 url: `${endpoint}`,
-                method: (extraOptions && extraOptions.method)||'get',
+                method: (extraOptions && extraOptions.method)||'GET',
                 // parameter: defines the behaviour of query.
                 params: query,
                 data: body
             });
+            console.log(extraOptions);
             return {data: response.data};
         } catch(error){
             console.log(error);
@@ -37,9 +39,11 @@ export const api = createApi({
         postData: builder.mutation({
             query: (post)=> ({
                 endpoint: "/posts",
-                method: "POST",
                 body: post
-            })
+            }),
+            extraOptions:{
+                method: "POST"
+            }
         })
     })
 });
