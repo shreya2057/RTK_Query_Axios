@@ -5,7 +5,7 @@ function NavBar(){
         <Link to='/create' className="link">Create</Link>
         <Link to='/read' className="link">Read</Link>
         <Link to='/update' className="link">Update</Link>
-        <Link to='/' className="link">Delete</Link>
+        <Link to='/delete' className="link">Delete</Link>
     </>
 }
 
