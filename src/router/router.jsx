@@ -6,6 +6,7 @@ import {
 import App from "../App";
 import Read from "../screen/Read";
 import Create from "../screen/Create";
+import Update from "../screen/Update";
 
 function AppRouter(){
     return <Router>
@@ -13,7 +14,7 @@ function AppRouter(){
             <Route path="/" element={<App/>}/>
             <Route path="read" element={<Read/>}/>
             <Route path="create" element={<Create/>}/>
-            {/* <Route path="update" element={<App/>}/> */}
+            <Route path="update" element={<Update/>}/>
             {/* <Route path="delete" element={<App/>}/> */}
         </Routes>
     </Router>
