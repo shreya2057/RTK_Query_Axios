@@ -10,16 +10,13 @@ function Create(){
         title: title,
         body: body
     };
-    const post_submit = (event) => {
+    const post_submit = async (event) => {
         event.preventDefault();
         try{
-            submit_post(posts)
-            if(isLoading){
-                console.log("Loading...")
-            }
-            if(isSuccess){
-                console.log("Success...")
-            }
+            await submit_post(posts);
+            setTitle("");
+            setBody("");
+            alert("Posts created");
         }catch(error){
             console.log(error)
         }

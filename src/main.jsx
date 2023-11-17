@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import AppRouter from './router/router.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <AppRouter />
+    </Provider>
+  </React.StrictMode>,
 )
