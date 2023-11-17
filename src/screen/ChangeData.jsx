@@ -6,10 +6,9 @@ function ChangeData(){
     return <>
         <input  
             type='text'
-            // onChange={(event)=>setBody(event.target.value)}
-            // value={body}
+            disabled
+            value={post.post_title}
         />
-        <div>{post.post_id}</div>
     </>
 }
 
