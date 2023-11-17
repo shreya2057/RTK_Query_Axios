@@ -5,6 +5,9 @@ function ChangeData(){
     const location = useLocation();
     const post = location.state;
     const [body, setBody] = useState("");
+    const change_submit = (event)=>{
+        event.preventDefault();
+    }
     return <>
         <input  
             type='text'
