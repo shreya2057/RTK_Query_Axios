@@ -5,8 +5,16 @@ function ChangeData(){
     const location = useLocation();
     const post = location.state;
     const [body, setBody] = useState("");
-    const change_submit = (event)=>{
+    const change_submit = (event, id, body)=>{
         event.preventDefault();
+        const data = {
+            body: body
+        };
+        try{
+
+        }catch(error){
+            
+        }
     }
     return <>
         <input  
@@ -25,7 +33,7 @@ function ChangeData(){
         <br/>
         <br/>
         <button 
-            onClick={(event)=>{change_submit(event)}}
+            onClick={(event)=>{change_submit(event, post.post_id, body)}}
         >
             Add
         </button>
