@@ -20,8 +20,14 @@ function Update(){
                     className="cards"
                     onClick={()=>{
                         const id = item.id;
-                        console.log(item.id)
-                        navigate("/change", {state:{post_id: id}})
+                        const title = item.title;
+                        navigate(
+                            "/change", 
+                            { state: {
+                                post_id: id,
+                                post_title: title
+                            }}
+                        )
                     }}
                 >
                     <div><b>{item.title}</b></div>
